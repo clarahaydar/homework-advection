@@ -16,7 +16,7 @@ int main() {
 	    X0 = -L0/4;
 	      N = 128;
 	      dx=L0/N;
-              CFL=0.8;
+              CFL=2;
 	      DT = (dx)*CFL;
 		  run();
 }
@@ -38,9 +38,9 @@ event integration (i++) {
 	  double dt = DT;
 	    dt = dtnext (dt);
 	     foreach() {
-		        cDelta = Delta/dt;// Lax-Friedrich”
-			//cDelta = 0;//Average flux
-			//cDelta = 1;//upwind flux
+		       cDelta = Delta/dt;// Lax-Friedrich”
+		//	cDelta = 0;//Average flux
+		//	cDelta = 1;//upwind flux
 			F[] = (U[0,0]+U[-1,0])/2.  - cDelta *(U[0,0]-U[-1,0])/2;}
 			boundary ({F});
 			 foreach()
